@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet, ScrollView, ImageBackground } from 'react-native';
+import { View, Text, Button, StyleSheet, ScrollView, ImageBackground, useWindowDimensions } from 'react-native';
 
 const App = () => {
+
+    const { width: windowWidth, height: windowHeight } = useWindowDimensions();
     return (
         <ScrollView>
-            <ImageBackground source={require()}></ImageBackground>
+            <View style={{width: windowWidth, height: windowHeight}}>
+            <ImageBackground source={require('./assets/night01.jpg')} style={{flex:1}} />
+            </View>
         </ScrollView>
     );
 };
